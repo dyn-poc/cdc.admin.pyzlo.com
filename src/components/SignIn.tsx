@@ -149,7 +149,7 @@ export default function SignIn({authService}: SignInProps) {
                 Sign In With Google
             </Button>
            
-           <form action="/auth" target="loginIframe" method="get">
+           <form action="/auth" target="loginIframe" method="get" >
                 <Button
                 startIcon={<TwitterIcon/>}
                 type="submit"
@@ -162,7 +162,7 @@ export default function SignIn({authService}: SignInProps) {
                </Button>
             </form>
          
-          <iframe name="loginIframe">
+          <iframe name="loginIframe" style={{height:"2rm",width:"400px"}}>
           </iframe>
 
 
