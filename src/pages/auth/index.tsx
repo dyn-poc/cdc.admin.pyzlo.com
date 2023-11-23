@@ -3,8 +3,6 @@
 import React, {useEffect} from "react";
 import "../index.css";
 import "../../styles/globals.css";
-import SignIn from "../../components/SignIn";
-import SignUp from "../../components/SignUp";
 import {authMachine, AuthService} from "../../machines/authMachine";
 import {useActor, useInterpret, useMachine, useSelector} from "@xstate/react";
 import {AnyState, State} from "xstate";
@@ -13,11 +11,7 @@ import {SnackbarContext, snackbarMachine} from "../../machines/snackbarMachine";
 import AlertBar from "../../components/AlertBar";
 import {withGigya} from "../../machines/withGigya";
 import {notificationMachine} from "../../machines/notificationsMachine";
-import EventsContainer from "../../containers/ActionsContainer";
-import {useInterpretWithLocalStorage} from "../../machines/withLocalStorage";
-import { RouteComponentProps ,Router} from "@reach/router";
 import {makeStyles, ThemeProvider } from "@mui/styles";
-import NotificationsContainer from "../../containers/NotificationsContainer";
 
 
 declare module '@mui/styles/defaultTheme' {
@@ -101,14 +95,18 @@ const App = () => {
         authService.send({type: 'SOCIAL' ,provider: "oidc-consoledev",  ...data});
     };
   
+    const styles = useStyles();
 
     useEffect(() => {
+        handleSSo({authFlow: "redirect", useChildContext: false, redirectURL: `${window.location.origin}#/profile`});
+
         const subscription = authService.subscribe((state: AnyState) => {
             // simple state logging
             console.log(state);
             showSnackbar({message: state.toStrings().reverse()[0], severity: "info"})
 
         });
+        
 
         return subscription.unsubscribe;
     }, [authService]);
@@ -117,10 +115,10 @@ const App = () => {
     // @ts-ignore
     // @ts-ignore
     return (
-        <div>
+        <div style={{backgroundColor: "#f5f5f5"}}>
             <StyledEngineProvider injectFirst>
-                <ThemeProvider theme={responsiveTheme}> 
-
+                <ThemeProvider theme={responsiveTheme}>
+                    
             <AlertBar snackbarService={snackbarService}/>
                 </ThemeProvider>
             </StyledEngineProvider>
