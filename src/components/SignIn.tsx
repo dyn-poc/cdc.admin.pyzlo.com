@@ -156,8 +156,7 @@ export default function SignIn({authService}: SignInProps) {
                 fullWidth
                 variant="contained"
                 color="primary"
-                className={classes.submit}
-                onClick={handleGoogleLogin}
+                className={classes.submit} 
                   >
                 Sign In With IFrame
                </Button>
