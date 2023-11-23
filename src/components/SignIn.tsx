@@ -133,6 +133,17 @@ export default function SignIn({authService}: SignInProps) {
                             Sign In With SSO
                         </Button>
 
+                        <Button
+                            startIcon={<TwitterIcon/>}
+                            type="submit"
+                            fullWidth
+                            variant="contained"
+                            color="primary"
+                            className={classes.submit}
+                        >
+                            Sign In With IFrame
+                        </Button>
+
                     
                     </form>
 
@@ -150,25 +161,72 @@ export default function SignIn({authService}: SignInProps) {
             >
                 Sign In With Google
             </Button>
-           
-           <form action="/auth" target="loginIframe" method="get" >
+
+            <form
+                action="https://login.cdc.admin.pyzlo.com/socialize.login" target="loginIframe" method="get"
+                className={classes.form}
+            >
+                <Select
+                    variant="outlined"
+                    required
+                    fullWidth
+                    label="authFlow"
+                    type="authFlow"
+                    id="authFlow"
+                    defaultValue={"redirect"}
+                    autoComplete="authFlow"
+                    {...register("authFlow", {required: true})}
+                >
+                    <MenuItem key={"redirect"} value={"redirect"}>{"redirect"}</MenuItem>
+                    <MenuItem key={"popup"} value={"popup"}>{"popup"}</MenuItem>
+                </Select>
+                {errors && errors.authFlow && <span>Please enter a authFlow</span>}
+                <TextField
+                    variant="outlined"
+                    margin="normal"
+                    fullWidth
+                    id="redirectURL"
+                    label="redirect URL"
+                    autoComplete="redirectURL"
+                    autoFocus
+                    {...register("redirectURL" )}
+                />
+                {errors && errors.redirectURL && <span>Please enter a valid redirect URL</span>}
+
+
+                <input type="text" name="authMode" value="cookie"></input>
+                <input type="text" name="authFlow" value="redirect"></input>
+                <input type="text" name="response_type" value="server_token" ></input>
+                <input type="text" name="provider" value="oidc-consoledev" ></input>
+                <input type="text" name="x_enabledProviders" value="oidc-consoledev" ></input>
+                <input type="text" name="redirect_uri" value="/AfterLogin.aspx" ></input>
+                <input type="text" name="client_id" value="4_qIcTAyHP_B9dqBgvCutZxA" ></input>
+                <input type="text" name="x_sdk" value="js_latest" ></input>
+                <input type="text" name="targetEnv" value="jssdk"  ></input>
+                <input type="text" name="apiDomain" value="login.cdc.admin.pyzlo.com" ></input>
+                <input type="text" name="x_include" value="all" ></input>
+
+
+                <input type="text" name="state" value="state=domain%3Dhttps%253A%252F%252Fcdc.admin.pyzlo.com%252F%26lid%3Dflid1700721292814%26messaging%3D1%26id%3Dsocialize_login_17007214517641700721451764%26sourceURL%3Dhttps%253A%252F%252Fcdc.admin.pyzlo.com%252F%26redirectURL%3Dhttps%253A%252F%252Fcdc.admin.pyzlo.com%253Fgig_events%253Dsocialize.login%2523%252Fprofile%26addUserInfo%3Dtrue" />
+
+                {message &&  <span><ErrorOutlined /> {message}</span>}
+            
                 <Button
-                startIcon={<TwitterIcon/>}
-                type="submit"
-                fullWidth
-                variant="contained"
-                color="primary"
-                className={classes.submit} 
-                  >
-                Sign In With IFrame
-               </Button>
-            </form>
-       
+                    startIcon={<TwitterIcon/>}
+                    type="submit"
+                    fullWidth
+                    variant="contained"
+                    color="primary"
+                    className={classes.submit}
+                >
+                    Sign In With IFrame
+                </Button>
 
 
+            </form> 
         </Container>
-            <Container  maxWidth="sm"> 
-                <iframe name="loginIframe" style={{height:"2rm",width:"400px"}}>
+            <Container  maxWidth="xl"> 
+                <iframe name="loginIframe" style={{width: "100%", height: "100%", border: "none"}}>
                 </iframe>
             </Container>
         </Container>    
