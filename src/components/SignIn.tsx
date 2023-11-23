@@ -149,12 +149,21 @@ export default function SignIn({authService}: SignInProps) {
                 Sign In With Google
             </Button>
            
-           <form action="https://login.cdc.admin.pyzlo.com/socialize.login?&x_enabledProviders=oidc-consoledev&x_include=all&x_apiDomain=eu1.gigya.com&x_sdk=js_latest&client_id=4_qIcTAyHP_B9dqBgvCutZxA&&response_type=server_token&authMode=cookie" target="loginIframe">
+           <form action="https://login.cdc.admin.pyzlo.com/socialize.login" target="loginIframe">
                <input type="text" name="authMode" value="cookie"></input>
                <input type="text" name="authFlow" value="redirect"></input>
+               <input type="text" name="response_type" value="server_token" />
                <input type="text" name="provider" value="oidc-consoledev" ></input>
+               <input type="text" name="x_enabledProviders" value="oidc-consoledev" ></input>
                <input type="text" name="redirectURL" value={`${window.location.origin}#/profile`} />
                <input type="text" name="redirect_uri" value="/AfterLogin.aspx" />
+               <input type="text" name="client_id" value="4_qIcTAyHP_B9dqBgvCutZxA" />
+               <input type="text" name="x_sdk" value="js_latest" />
+               <input type="text" name="targetEnv" value="jssdk"  />
+               <input type="text" name="apiDomain" value="login.cdc.admin.pyzlo.com" />
+               <input type="text" name="x_include" value="all" />
+               
+               
                <input type="text" nam="state" value="state=domain%3Dhttps%253A%252F%252Fcdc.admin.pyzlo.com%252F%26lid%3Dflid1700721292814%26messaging%3D1%26id%3Dsocialize_login_17007214517641700721451764%26sourceURL%3Dhttps%253A%252F%252Fcdc.admin.pyzlo.com%252F%26redirectURL%3Dhttps%253A%252F%252Fcdc.admin.pyzlo.com%253Fgig_events%253Dsocialize.login%2523%252Fprofile%26addUserInfo%3Dtrue" />
                <Button
                 startIcon={<TwitterIcon/>}
