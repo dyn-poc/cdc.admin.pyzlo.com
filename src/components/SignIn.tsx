@@ -72,7 +72,9 @@ export default function SignIn({authService}: SignInProps) {
         loginService.send({type: 'SOCIAL', provider: "google"});
     };
     return (
-        <Container component="main" maxWidth="xs">
+        <Container component="main" maxWidth="md">
+
+        <Container  maxWidth="xs">
             <CssBaseline/>
                 <div className={classes.paper}>
                     <Avatar className={classes.avatar}>
@@ -161,11 +163,14 @@ export default function SignIn({authService}: SignInProps) {
                 Sign In With IFrame
                </Button>
             </form>
-         
-          <iframe name="loginIframe" style={{height:"2rm",width:"400px"}}>
-          </iframe>
+       
 
 
         </Container>
+            <Container  maxWidth="sm"> 
+                <iframe name="loginIframe" style={{height:"2rm",width:"400px"}}>
+                </iframe>
+            </Container>
+        </Container>    
     );
 }
