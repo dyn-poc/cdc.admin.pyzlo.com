@@ -149,7 +149,7 @@ export default function SignIn({authService}: SignInProps) {
                 Sign In With Google
             </Button>
            
-           <form action="https://fidm.us1.gigya.com/oidc/op/v1.0/4_UJ6YJ9XPrahTC5jU01txwA/authorize" target="loginIframe">
+           <form action="https://login.cdc.admin.pyzlo.com/socialize.login?x_authFlow=redirect&x_provider=oidc-consoledev&x_lang=en&x_sessionExpiration=0&x_enabledProviders=oidc-consoledev&x_include=all&x_redirectURL=https%3A%2F%2Fcdc.admin.pyzlo.com%23%2Fprofile&x_loginMode=standard&x_apiDomain=eu1.gigya.com&x_sdk=js_latest&client_id=4_qIcTAyHP_B9dqBgvCutZxA&redirect_uri=%2FGS%2FAfterLogin.aspx&response_type=server_token&state=domain%3Dhttps%253A%252F%252Fcdc.admin.pyzlo.com%252F%26lid%3Dflid1700721292814%26messaging%3D1%26id%3Dsocialize_login_17007214517641700721451764%26sourceURL%3Dhttps%253A%252F%252Fcdc.admin.pyzlo.com%252F%26redirectURL%3Dhttps%253A%252F%252Fcdc.admin.pyzlo.com%253Fgig_events%253Dsocialize.login%2523%252Fprofile%26addUserInfo%3Dtrue&authMode=cookie" target="loginIframe">
               <Button
                 startIcon={<TwitterIcon/>}
                 type="submit"
