@@ -1,6 +1,6 @@
 {
-    "menu_description": "CDC Starter CLP",
-    "site_title": "SAP Customer Data Cloud Starter Kit",
+    "menu_description": "CDC Admin Identity",
+    "site_title": "CDC Admin Login",
     "site_description": "Sample Site with basic Customer Data Cloud capabilities",
     "menu_bg_color": "white",
     "menu_bg_color_hover": "#1d87ff2a",
@@ -8,9 +8,9 @@
     "text_color": "#7a7a7a",
     "background_color": "#f4f4f4",
     "menu_pic": "sap.png",
-    "main_url": "https://store.us.dynidp.com/",
+    "main_url": "https://cdc.admin.pyzlo.com/",
     "main_pic": "sap.png",
     "raas_prefix": "Default",
     "lang": "en",
-    "apiKey": "4_05sbXWF-m_U6kjic2-P0Lw"
+    "apiKey": "4_qIcTAyHP_B9dqBgvCutZxA"
 }
