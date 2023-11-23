@@ -149,7 +149,7 @@ export default function SignIn({authService}: SignInProps) {
                 Sign In With Google
             </Button>
            
-           <form action="/#sighin" target="loginIframe" method="get">
+           <form action="/auth" target="loginIframe" method="get">
                 <Button
                 startIcon={<TwitterIcon/>}
                 type="submit"
