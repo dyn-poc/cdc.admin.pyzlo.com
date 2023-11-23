@@ -149,7 +149,22 @@ export default function SignIn({authService}: SignInProps) {
                 Sign In With Google
             </Button>
            
-          
+           <form action="https://fidm.us1.gigya.com/oidc/op/v1.0/4_UJ6YJ9XPrahTC5jU01txwA/authorize" target="loginIframe">
+              <Button
+                startIcon={<TwitterIcon/>}
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="primary"
+                className={classes.submit}
+                onClick={handleGoogleLogin}
+                  >
+                Sign In With IFrame
+               </Button>
+            </form>
+         
+          <iframe name="loginIframe">
+          </iframe>
 
 
         </Container>
