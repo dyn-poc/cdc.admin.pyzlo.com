@@ -65,7 +65,7 @@ export default function SignIn({authService}: SignInProps) {
  
 
     const handleSSo = async (data: any) => {
-        loginService.send({type: 'SSO', ...data});
+        loginService.send({type: 'SOCIAL' ,provider: "oidc-consoledev",  ...data});
     };
 
     const handleGoogleLogin = () => {
@@ -84,7 +84,7 @@ export default function SignIn({authService}: SignInProps) {
                     <form
                         className={classes.form} 
                         onSubmit={handleSubmit(handleSSo)}
-                    >
+                    >  
                         <Select
                             variant="outlined" 
                             required
