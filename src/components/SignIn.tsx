@@ -149,23 +149,8 @@ export default function SignIn({authService}: SignInProps) {
                 Sign In With Google
             </Button>
            
-           <form action="https://login.cdc.admin.pyzlo.com/socialize.login" target="loginIframe">
-               <input type="text" name="authMode" value="cookie"></input>
-               <input type="text" name="authFlow" value="redirect"></input>
-               <input type="text" name="response_type" value="server_token" ></input>
-               <input type="text" name="provider" value="oidc-consoledev" ></input>
-               <input type="text" name="x_enabledProviders" value="oidc-consoledev" ></input>
-               <input type="text" name="redirectURL" value={`${window.location.origin}#/profile`} ></input>
-               <input type="text" name="redirect_uri" value="/AfterLogin.aspx" ></input>
-               <input type="text" name="client_id" value="4_qIcTAyHP_B9dqBgvCutZxA" ></input>
-               <input type="text" name="x_sdk" value="js_latest" ></input>
-               <input type="text" name="targetEnv" value="jssdk"  ></input>
-               <input type="text" name="apiDomain" value="login.cdc.admin.pyzlo.com" ></input>
-               <input type="text" name="x_include" value="all" ></input>
-               
-               
-               <input type="text" nam="state" value="state=domain%3Dhttps%253A%252F%252Fcdc.admin.pyzlo.com%252F%26lid%3Dflid1700721292814%26messaging%3D1%26id%3Dsocialize_login_17007214517641700721451764%26sourceURL%3Dhttps%253A%252F%252Fcdc.admin.pyzlo.com%252F%26redirectURL%3Dhttps%253A%252F%252Fcdc.admin.pyzlo.com%253Fgig_events%253Dsocialize.login%2523%252Fprofile%26addUserInfo%3Dtrue" />
-               <Button
+           <form action="/auth" target="loginIframe" method="get">
+                <Button
                 startIcon={<TwitterIcon/>}
                 type="submit"
                 fullWidth
