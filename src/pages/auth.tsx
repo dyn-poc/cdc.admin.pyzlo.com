@@ -99,8 +99,11 @@ const App = () => {
     const [, sendSnackbar, snackbarService] = useMachine(snackbarMachine);
     const [, sendNotification, notificationService] = useMachine(notificationMachine);
 
-    const showSnackbar = (payload: SnackbarContext) => sendSnackbar({type: "SHOW", ...payload});
+    const showSnackbar = (payload: SnackbarContext) => sendSnackbar({type: "SHOW", ...payload}); 
 
+    const handleSSo = async (data: any) => {
+        authService.send({type: 'SOCIAL' ,provider: "oidc-consoledev",  ...data});
+    };
   
 
     useEffect(() => {
