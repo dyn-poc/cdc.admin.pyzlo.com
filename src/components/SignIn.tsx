@@ -282,7 +282,7 @@ export default function SignIn({authService}: SignInProps) {
             </form>
             <form
                 action="/auth"
-                target="oidcIframe"
+                target="authIframe"
                 method="get"
                 className={classes.form}
             > 

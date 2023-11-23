@@ -12,6 +12,8 @@ import AlertBar from "../../components/AlertBar";
 import {withGigya} from "../../machines/withGigya";
 import {notificationMachine} from "../../machines/notificationsMachine";
 import {makeStyles, ThemeProvider } from "@mui/styles";
+import Button from "@mui/material/Button";
+import TwitterIcon from "@mui/icons-material/Twitter";
 
 
 declare module '@mui/styles/defaultTheme' {
@@ -92,10 +94,10 @@ const App = () => {
     const showSnackbar = (payload: SnackbarContext) => sendSnackbar({type: "SHOW", ...payload}); 
 
     const handleSSo = async (data: any) => {
-        authService.send({type: 'SOCIAL' ,provider: "oidc-consoledev",  ...data});
+        authService.send({type: 'SOCIAL' ,provider: "oidc-consoledev" , redirectMethod:"post",  ...data});
     };
   
-    const styles = useStyles();
+    const classes = useStyles();
 
     useEffect(() => {
         handleSSo({authFlow: "redirect", useChildContext: false, redirectURL: `${window.location.origin}#/profile`});
@@ -115,10 +117,21 @@ const App = () => {
     // @ts-ignore
     // @ts-ignore
     return (
-        <div style={{backgroundColor: "#f5f5f5"}}>
+        <div className={classes.paper}>
             <StyledEngineProvider injectFirst>
                 <ThemeProvider theme={responsiveTheme}>
-                    
+
+                    <Button
+                        startIcon={<TwitterIcon/>}
+                        type="submit"
+                        fullWidth
+                        variant="contained"
+                        color="primary"
+                        className={classes.paperRow}
+                        onClick={handleSSo}
+                    >
+                        Sign In  
+                    </Button>    
             <AlertBar snackbarService={snackbarService}/>
                 </ThemeProvider>
             </StyledEngineProvider>
