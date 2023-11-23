@@ -1,27 +1,23 @@
 
 // import logo from "./logo.svg";
 import React, {useEffect} from "react";
-import "./index.css";
-import "../styles/globals.css";
-import SignIn from "../components/SignIn";
-import SignUp from "../components/SignUp";
-import {authMachine, AuthService} from "../machines/authMachine";
-// import {Hash, Router, useNavigate} from "react-router";
-// import { HashRouter as  Router} from "react-router-dom";
-
+import "../index.css";
+import "../../styles/globals.css";
+import SignIn from "../../components/SignIn";
+import SignUp from "../../components/SignUp";
+import {authMachine, AuthService} from "../../machines/authMachine";
 import {useActor, useInterpret, useMachine, useSelector} from "@xstate/react";
 import {AnyState, State} from "xstate";
 import {Box, Container, createTheme, responsiveFontSizes, Snackbar, StyledEngineProvider, Theme} from "@mui/material";
-import {SnackbarContext, snackbarMachine} from "../machines/snackbarMachine";
-import AlertBar from "../components/AlertBar";
-import {withGigya} from "../machines/withGigya";
-import {notificationMachine} from "../machines/notificationsMachine";
-import ProfileContainer from "../containers/ProfileContainer";
-import EventsContainer from "../containers/ActionsContainer";
-import {useInterpretWithLocalStorage} from "../machines/withLocalStorage";
+import {SnackbarContext, snackbarMachine} from "../../machines/snackbarMachine";
+import AlertBar from "../../components/AlertBar";
+import {withGigya} from "../../machines/withGigya";
+import {notificationMachine} from "../../machines/notificationsMachine";
+import EventsContainer from "../../containers/ActionsContainer";
+import {useInterpretWithLocalStorage} from "../../machines/withLocalStorage";
 import { RouteComponentProps ,Router} from "@reach/router";
 import {makeStyles, ThemeProvider } from "@mui/styles";
-import NotificationsContainer from "../containers/NotificationsContainer";
+import NotificationsContainer from "../../containers/NotificationsContainer";
 
 
 declare module '@mui/styles/defaultTheme' {
