@@ -16,6 +16,7 @@
     "axios": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-frame-component": "^5.2.6",
     "react-hook-form": "latest",
     "react-json-view": "^1.21.3",
     "react-router": "6",
@@ -57,7 +58,6 @@
     "@types/react-dom": "^18.0.8",
     "@types/react-router-config": "^5.0.6",
     "@types/react-router-dom": "^5.3.3",
-
     "@typescript-eslint/eslint-plugin": "^5.30.5",
     "@typescript-eslint/parser": "^5.30.5",
     "@vitejs/plugin-react": "^2.2.0",
@@ -68,4 +68,3 @@
     "vite-plugin-pages": "^0.27.1"
   }
 }
-
